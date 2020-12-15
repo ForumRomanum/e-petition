@@ -1,0 +1,9 @@
+{
+    "name": "e-petycje",
+    "version": "1.0.0",
+    "dependencies": {
+    },
+    "scripts": {
+        "serve": "php -S localhost:8000 -t public"
+    }
+}
