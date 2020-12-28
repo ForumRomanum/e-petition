@@ -10,6 +10,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 /**
  * @property integer id
  * @property integer user_id
+ * @property integer goal
  * @property string name
  * @property string description
  * @property-read string description_plain
@@ -27,6 +28,7 @@ class Petition extends Model
     protected $guarded = [
         'user_id',
         'description_plain',
+        'goal',
     ];
 
     protected $with = [
