@@ -1,0 +1,23 @@
+.form {
+    width: 300px;
+    max-width: 100%;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.fields label {
+    display: flex;
+    flex-direction: column;
+}
+
+.fields input {
+    height: 30px;
+    margin: 5px 0;
+}
+
+h1 {
+    text-align: center;
+}

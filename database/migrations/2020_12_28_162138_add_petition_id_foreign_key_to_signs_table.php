@@ -16,7 +16,7 @@ class AddPetitionIdForeignKeyToSignsTable extends Migration
         Schema::table('signs', function (Blueprint $table) {
             $table->foreign('petition_id')
                 ->references('id')
-                ->on('users')
+                ->on('petitions')
                 ->onUpdate('RESTRICT')
                 ->onDelete('CASCADE');
         });
@@ -30,7 +30,7 @@ class AddPetitionIdForeignKeyToSignsTable extends Migration
     public function down()
     {
         Schema::table('signs', function (Blueprint $table) {
-            $table->dropForeign('petition_id');
+            $table->dropForeign(['petition_id']);
         });
     }
 }

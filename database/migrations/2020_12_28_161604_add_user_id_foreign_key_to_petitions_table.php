@@ -30,7 +30,7 @@ class AddUserIdForeignKeyToPetitionsTable extends Migration
     public function down()
     {
         Schema::table('petitions', function (Blueprint $table) {
-            $table->dropForeign('user_id');
+            $table->dropForeign(['user_id']);
         });
     }
 }

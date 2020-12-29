@@ -2,14 +2,13 @@
 
 namespace App\Models;
 
-use Illuminate\Auth\Authenticatable;
-use Illuminate\Contracts\Auth\Access\Authorizable as AuthorizableContract;
-use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
+use DateTime;
+use Illuminate\Auth\Authenticatable as AuthenticatableTrait;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Laravel\Lumen\Auth\Authorizable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
 /**
  * @property integer id
@@ -18,13 +17,16 @@ use Laravel\Lumen\Auth\Authorizable;
  * @property string last_name
  * @property string email
  * @property string password_reset_token
+ * @property string remember_token
+ * @property DateTime email_verified_at
  * @property string password
+ * @property string api_token
  * @property boolean is_active
  * @property boolean is_admin
  */
-class User extends Model implements AuthenticatableContract, AuthorizableContract
+class User extends Authenticatable
 {
-    use Authenticatable, Authorizable, HasFactory, SoftDeletes;
+    use AuthenticatableTrait, HasFactory, SoftDeletes, Notifiable;
 
     protected $fillable = [
         'first_name',
@@ -32,14 +34,21 @@ class User extends Model implements AuthenticatableContract, AuthorizableContrac
         'email',
     ];
 
+    protected $hidden = [
+        'password',
+        'remember_token',
+    ];
+
+    protected $casts = [
+        'email_verified_at' => 'datetime',
+    ];
+
+
     protected $guarded = [
         'password_reset_token',
         'is_active',
-        'role_id'
-    ];
-
-    protected $hidden = [
-        'password',
+        'role_id',
+        'api_token'
     ];
 
     public function role(): BelongsTo
