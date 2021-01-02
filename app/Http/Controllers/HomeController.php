@@ -16,6 +16,7 @@ class HomeController extends Controller
     public function search(Request $request)
     {
         $phrase = $request->get('phrase');
+        $page = $request->get('page', 1);
 
         $data = Petition::query()
             ->where(function ($q) use ($phrase) {
@@ -23,7 +24,13 @@ class HomeController extends Controller
                     ->orWhere('description_plain', 'like', "%$phrase%");
             })
             ->where('is_public', true)
-            ->get();
+            ->select(['id', 'name', 'goal', 'user_id', 'description_plain'])
+            ->with(['user' => function ($user) {
+                $user->select(['id', 'first_name', 'last_name']);
+            }])
+            ->withCount('signs')
+            ->orderBy('id', 'desc')
+            ->paginate(20, ['petitions.*'], 'page', $page);
 
         return view('pages.search', [
             'searchPhrase' => $phrase,

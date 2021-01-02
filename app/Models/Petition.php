@@ -6,6 +6,7 @@ use App\Helpers\Helpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -33,11 +34,8 @@ class Petition extends Model
         'goal',
     ];
 
-    protected $with = [
-        'user'
-    ];
-    protected $withCount=[
-        'signs'
+    protected $appends = [
+        'description_short'
     ];
 
     public function user(): BelongsTo
@@ -45,15 +43,24 @@ class Petition extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function signs(): int
+    public function signs(): HasMany
     {
-        return $this->hasMany(Sign::class)->count();
+        return $this->hasMany(Sign::class);
     }
 
     public function setDescriptionAttribute(string $value)
     {
         $this->attributes['description'] = $value;
         $this->attributes['description_plain'] = Helpers::htmlToText($value);
+    }
+
+    public function getDescriptionShortAttribute(): string
+    {
+        return preg_replace(
+                '/\s+?(\S+)?$/',
+                '',
+                substr($this->description_plain, 0, 100)
+            ) . '...';
     }
 
     public function setDescriptionPlainAttribute(string $value)

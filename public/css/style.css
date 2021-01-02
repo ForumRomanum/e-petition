@@ -26,6 +26,7 @@ body {
     box-shadow: 0 0 4px 1px #585858;
     display: flex;
     justify-content: center;
+    flex-direction: column;
 }
 
 @media (max-width: 900px) {
