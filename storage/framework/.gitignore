@@ -7,5 +7,3 @@ routes.php
 routes.scanned.php
 schedule-*
 services.json
-/sessions/
-/views/
