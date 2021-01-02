@@ -8,6 +8,8 @@
 
 @section('content')
     <form action="/register" class="form" method="post">
+        @csrf
+
         <h1>Rejestracja</h1>
         <div class="fields">
 

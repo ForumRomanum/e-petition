@@ -8,6 +8,8 @@
 
 @section('content')
     <form action="/login" class="form" method="post">
+        @csrf
+
         <h1>Logowanie</h1>
         <div class="fields">
 

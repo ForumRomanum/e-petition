@@ -20,10 +20,17 @@
             <span class="material-icons">search</span>
         </button>
     </form>
-    <div class="links">
-        <a href="/login">Logowanie</a>
-        <a href="/register">Rejestracja</a>
-    </div>
+    @guest
+        <div class="links">
+            <a href="/login">Logowanie</a>
+            <a href="/register">Rejestracja</a>
+        </div>
+    @endguest
+    @auth
+        <div class="links">
+            <a href="/petition/add">Dodaj petycję</a>
+        </div>
+    @endauth
 </header>
 <div class="content">
     @yield('content')
