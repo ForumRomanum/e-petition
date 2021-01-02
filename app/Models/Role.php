@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 
 /**
@@ -26,6 +27,6 @@ class Role extends Model
 
     public static function getUserRole()
     {
-        return static::query()->where('type', self::ADMIN)->first();
+        return static::query()->where('type', self::USER)->first();
     }
 }

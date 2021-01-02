@@ -10,4 +10,9 @@ class Helpers
             trim(html_entity_decode(strip_tags($html)))
         );
     }
+
+    public static function isProduction(): bool
+    {
+        return env('APP_ENV') === 'production';
+    }
 }

@@ -26,9 +26,6 @@ class CreateAdmin extends Seeder
                 'email' => env('ADMIN_EMAIL'),
                 'is_active' => true
             ]);
-            $generateRandomString = Str::random(60);
-            $token = Hash::make($generateRandomString);
-            $adminUser->api_token = $token;
             $adminUser->password = Hash::make(env('ADMIN_PASSWORD'));
             $adminUser->save();
         }

@@ -15,7 +15,10 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             CreateRoles::class,
-            CreateAdmin::class
+            CreateAdmin::class,
+            CreateUsersFaker::class,
+            CreatePetitionsFaker::class,
+            CreateSignsFaker::class
         ]);
     }
 }

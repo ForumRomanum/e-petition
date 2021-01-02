@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use App\Helpers\Helpers;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -18,11 +19,12 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  */
 class Petition extends Model
 {
-    use SoftDeletes;
+    use SoftDeletes, HasFactory;
 
     protected $fillable = [
         'name',
         'description',
+        'is_public',
     ];
 
     protected $guarded = [
@@ -34,13 +36,16 @@ class Petition extends Model
     protected $with = [
         'user'
     ];
+    protected $withCount=[
+        'signs'
+    ];
 
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class);
     }
 
-    public function signsCount(): int
+    public function signs(): int
     {
         return $this->hasMany(Sign::class)->count();
     }
@@ -74,5 +79,13 @@ class Petition extends Model
     public function forceDelete(): bool
     {
         return false;
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $model->goal = $model->goal ?: 100000;
+        });
     }
 }
