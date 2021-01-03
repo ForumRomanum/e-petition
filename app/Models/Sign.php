@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
  * @property string confirm_token
  * @property DateTime confirmed_at
  * @property boolean is_active
+ * @property boolean notify
  */
 class Sign extends Model
 {
@@ -25,6 +26,7 @@ class Sign extends Model
         'first_name',
         'last_name',
         'email',
+        'notify',
     ];
 
     protected $guarded = [

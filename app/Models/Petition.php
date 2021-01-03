@@ -13,6 +13,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer id
  * @property integer user_id
  * @property integer goal
+ * @property integer type
  * @property string name
  * @property string description
  * @property-read string description_plain
@@ -21,6 +22,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 class Petition extends Model
 {
     use SoftDeletes, HasFactory;
+
+    const PETITION_TO_MINISTRY = 0;
+    const PETITION_TO_PUBLIC_PERSON = 1;
 
     protected $fillable = [
         'name',
@@ -35,7 +39,8 @@ class Petition extends Model
     ];
 
     protected $appends = [
-        'description_short'
+        'description_short',
+        'signs_percent',
     ];
 
     public function user(): BelongsTo
@@ -46,6 +51,11 @@ class Petition extends Model
     public function signs(): HasMany
     {
         return $this->hasMany(Sign::class);
+    }
+
+    public function tags()
+    {
+        return $this->belongsToMany(Tag::class);
     }
 
     public function setDescriptionAttribute(string $value)
@@ -61,6 +71,19 @@ class Petition extends Model
                 '',
                 substr($this->description_plain, 0, 100)
             ) . '...';
+    }
+
+
+    public function getSignsPercentAttribute(): string
+    {
+        if (!isset($this->signs_count)) {
+            return '0';
+        }
+        $percent = $this->signs_count / $this->goal * 100;
+        if ($percent > 100) {
+            return '100';
+        }
+        return (string)round($percent, 1);
     }
 
     public function setDescriptionPlainAttribute(string $value)
