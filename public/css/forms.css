@@ -1,0 +1,13 @@
+label {
+  display: flex;
+  flex-direction: column;
+}
+
+label span {
+  height: 30px;
+}
+
+label input {
+  height: 30px;
+  margin: 5px 0;
+}

@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PetitionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,7 +17,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('main-page');
-Route::get('/search', [HomeController::class, 'search'])->name('search');
+
+Route::get('/petitions', [PetitionController::class, 'index'])->name('petitions');
+Route::get('/petitions/{id}', [PetitionController::class, 'show'])->where('id', '[0-9]+')->name('single-petition');
+Route::get('/petitions/{id}/sign', [PetitionController::class, 'sign'])->where('id', '[0-9]+')->name('sign-petition');
+Route::middleware('auth')->group(function () {
+    Route::get('/petitions/create', function () {
+        return view('pages.create-petition');
+    })->name('create-petition');
+
+    Route::post('/petitions/create', [PetitionController::class, 'create']);
+
+    Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+});
 
 //AUTH
 Route::get('/login', function () {

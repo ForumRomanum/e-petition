@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Helpers\Helpers;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -13,12 +14,16 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call([
-            CreateRoles::class,
-            CreateAdmin::class,
+        $devSeeds = Helpers::isProduction() ? [] : [
             CreateUsersFaker::class,
             CreatePetitionsFaker::class,
             CreateSignsFaker::class
-        ]);
+        ];
+        $this->call(
+            array_merge([
+                CreateRoles::class,
+                CreateAdmin::class,
+            ], $devSeeds)
+        );
     }
 }

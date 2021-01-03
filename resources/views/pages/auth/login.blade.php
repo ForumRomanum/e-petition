@@ -7,18 +7,18 @@
 @endsection
 
 @section('content')
-    <form action="/login" class="form" method="post">
+    <form class="form" method="post">
         @csrf
 
         <h1>Logowanie</h1>
         <div class="fields">
 
             <label>
-                Email:
+                <span class="label">Email:</span>
                 <input type="email" name="email" value="{{$oldLogin ?? ''}}" required>
             </label>
             <label>
-                Hasło:
+                <span class="label">Hasło:</span>
                 <input type="password" name="password" value="{{$oldPassword ?? ''}}" required>
             </label>
 

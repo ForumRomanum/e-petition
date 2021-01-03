@@ -2,22 +2,107 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/e-petycje.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/e-petycje.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/API/ApiPetitionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/PetitionRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Models/Tag.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_170420_add_notify_field_to_signs_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_200040_add_additional_fields_to_petitions_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_200605_create_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_200612_create_petitions_tags_table.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/ckeditor.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/footer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/forms.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/ckeditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/ckeditor.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/af.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ar.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/az.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/bg.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ca.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/cs.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/da.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/de-ch.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/de.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/el.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/en-au.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/en-gb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/en.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/eo.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/es.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/et.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/eu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/fa.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/fi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/fr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/gl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/gu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/he.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/hi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/hr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/hu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/id.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/it.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ja.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/km.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/kn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ko.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ku.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/lt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/lv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/nb.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ne.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/nl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/no.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/oc.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/pt-br.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/pt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ro.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ru.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/si.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/sk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/sl.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/sq.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/sr-latn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/sr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/sv.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/th.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/tk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/tr.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/tt.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/ug.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/uk.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/vi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/zh-cn.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/ckeditor/build/translations/zh.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/create-petition.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/js/header.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/pagination/default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/pagination/simple-default.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/petitions-list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/home.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/petitions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AuthController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Authenticate.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Petition.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Petition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Sign.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sign.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/header.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/login-register.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/login-register.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/search.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/search.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home/index.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/search.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,18 +232,34 @@
     </include_path>
   </component>
   <component name="ProjectId" id="1mWiXfJfsepELCteqS5t0VHXyuI" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/projects-edulab/artsaas" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
     <property name="nodejs_package_manager_path" value="npm" />
+    <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dawid\projects\e-petycje\public\css" />
+      <recent name="C:\Users\dawid\projects\e-petycje\public\js" />
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages" />
+      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Controllers\API" />
+      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Controllers" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
+    </key>
   </component>
   <component name="RunManager" selected="npm.serve">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -189,7 +290,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1609615791542</updated>
-      <workItem from="1609615796935" duration="3463000" />
+      <workItem from="1609615796935" duration="31235000" />
     </task>
     <task id="LOCAL-00001" summary="package json">
       <created>1609616104483</created>
@@ -205,7 +306,21 @@
       <option name="project" value="LOCAL" />
       <updated>1609616138507</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="debugbar">
+      <created>1609619520346</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1609619520346</updated>
+    </task>
+    <task id="LOCAL-00004" summary="search">
+      <created>1609619558729</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1609619558729</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -223,8 +338,11 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
     <MESSAGE value="package json" />
     <MESSAGE value="editor files" />
-    <option name="LAST_COMMIT_MESSAGE" value="editor files" />
+    <MESSAGE value="debugbar" />
+    <MESSAGE value="search" />
+    <option name="LAST_COMMIT_MESSAGE" value="search" />
   </component>
 </project>

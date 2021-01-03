@@ -11,5 +11,13 @@ trim_trailing_whitespace = true
 [*.md]
 trim_trailing_whitespace = false
 
-[*.{yml,yaml}]
+[*.{yml, yaml}]
 indent_size = 2
+
+[*.css]
+indent_size = 2
+
+[*.js]
+indent_size = 2
+ij_javascript_use_semicolon_after_statement = true
+ij_javascript_force_semicolon_style = true

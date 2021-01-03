@@ -1,52 +1,58 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
 @import "header.css";
+@import "footer.css";
+@import "forms.css";
 
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 ul, ol {
-    list-style: none;
+  list-style: none;
 }
 
 body {
-    width: 100%;
-    background: #fefefe;
-    padding-top: 70px;
-    font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  background: #fefefe;
+  padding-top: 70px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+@media (max-width: 719px) {
+  body {
+    padding-top: 100px;
+  }
 }
 
 .content {
-    width: 900px;
-    max-width: 100%;
-    padding: 10px 15px;
-    margin: auto;
-    box-shadow: 0 0 4px 1px #585858;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  width: 1200px;
+  max-width: 100%;
+  padding: 10px 15px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
-@media (max-width: 900px) {
-    .content {
-        box-shadow: none;
-    }
-
-}
 
 button {
-    border: none;
-    padding: 10px;
-    margin-top: 10px;
+  border: none;
+  padding: 10px;
+  margin-top: 10px;
 }
+
 button[type=submit] {
-    background: #09c;
-    color: #ffffff;
+  background: #09c;
+  color: #ffffff;
 }
 
 h1 {
-    width: 100%;
-    margin-bottom: 15px;
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+[hidden] {
+  display: none !important;
 }
