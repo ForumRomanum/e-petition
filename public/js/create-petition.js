@@ -25,7 +25,7 @@ DecoupledDocumentEditor
   .then(editor => {
     editor.model.document.on('change:data', () => {
       console.log('The data has changed!', editor.getData());
-      element('textarea#description').valid = editor.getData();
+      jq('textarea#description').value(editor.getData());
     });
     window.editor = editor;
     // Set a custom container for the toolbar.

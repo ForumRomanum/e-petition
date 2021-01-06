@@ -26,16 +26,22 @@ class Petition extends Model
     const PETITION_TO_MINISTRY = 0;
     const PETITION_TO_PUBLIC_PERSON = 1;
 
+    const TYPES_NAMES = [
+        self::PETITION_TO_MINISTRY => 'petition.to_ministry',
+        self::PETITION_TO_PUBLIC_PERSON => 'petition.to_public_person',
+    ];
+
     protected $fillable = [
         'name',
         'description',
-        'is_public',
+        'type',
+        'goal',
     ];
 
     protected $guarded = [
+        'is_public',
         'user_id',
         'description_plain',
-        'goal',
     ];
 
     protected $appends = [
@@ -56,6 +62,11 @@ class Petition extends Model
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function tagNames()
+    {
+        return $this->belongsToMany(Tag::class)->select(['name']);
     }
 
     public function setDescriptionAttribute(string $value)

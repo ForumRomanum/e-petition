@@ -24,7 +24,11 @@ class PetitionRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name' => 'required|string',
+            'description' => 'required|string',
+            'type' => 'required|numeric',
+            'goal' => 'nullable|numeric',
+            'is_public' => 'required|boolean',
         ];
     }
 }

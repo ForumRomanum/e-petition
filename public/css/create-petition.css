@@ -1,0 +1,40 @@
+.petition-type,
+.petition-public {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin: 10px 0;
+}
+
+.petition-tags {
+  margin: 10px 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+  grid-gap: 10px;
+}
+
+.petition-tags > label {
+  justify-self: center;
+  width: 100%;
+}
+
+.petition-tags > label >  {
+  justify-self: center;
+  width: 100%;
+}
+
+.petition-type > label,
+.petition-public > label {
+  margin-left: 15px;
+  margin-right: 15px;
+}
+
+.petition-type > label:first-child,
+.petition-public > label:first-child {
+  margin-left: 0;
+}
+
+.petition-type > label:last-child,
+.petition-public > label:last-child {
+  margin-right: 0;
+}

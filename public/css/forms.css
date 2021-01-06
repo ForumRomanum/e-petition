@@ -3,11 +3,40 @@ label {
   flex-direction: column;
 }
 
-label span {
-  height: 30px;
-}
-
 label input {
   height: 30px;
   margin: 5px 0;
+}
+
+label .label {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+}
+
+label.radio,
+label.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+label.radio input[type="radio"],
+label.checkbox input[type="checkbox"] {
+  display: none;
+}
+
+label.radio input[type="radio"] + .label,
+label.checkbox input[type="checkbox"] + .label {
+  border: 1px solid #09c;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-align: center;
+  width: 100%;
+}
+
+label.radio input[type="radio"]:checked + .label,
+label.checkbox input[type="checkbox"]:checked + .label {
+  background: #09c;
+  color: #ffffff;
 }

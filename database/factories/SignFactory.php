@@ -26,6 +26,7 @@ class SignFactory extends Factory
             'first_name' => $this->faker->firstName,
             'last_name' => $this->faker->lastName,
             'email' => $this->faker->unique()->safeEmail,
+            'notify' => false,
             'confirmed_at' => now(),
             'petition_id' => Petition::inRandomOrder()->first()->id,
         ];

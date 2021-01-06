@@ -13,7 +13,7 @@ class CreatePetitionsTagsTable extends Migration
      */
     public function up()
     {
-        Schema::create('petitions_tags', function (Blueprint $table) {
+        Schema::create('petition_tag', function (Blueprint $table) {
             $table->id();
             $table->integer('petition_id');
             $table->foreign('petition_id')
@@ -33,6 +33,6 @@ class CreatePetitionsTagsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('petitions_tags');
+        Schema::dropIfExists('petition_tag');
     }
 }

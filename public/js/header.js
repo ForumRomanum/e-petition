@@ -1,5 +1,5 @@
 (() => {
-  element('header .links .toggle-form')
-    .addEventListener('click', () =>
-      toggleClass(element('header form'), 'show'));
+  const button = jq('header .links .toggle-form');
+  const form = jq('header form');
+  button.on('click', () => form.toggleClass('show'));
 })();
