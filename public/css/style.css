@@ -9,15 +9,12 @@
   padding: 0;
 }
 
-ul, ol {
-  list-style: none;
-}
-
 body {
   width: 100%;
   background: #fefefe;
   padding-top: 70px;
   font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
 }
 
 @media (max-width: 719px) {
@@ -55,4 +52,7 @@ h1 {
 
 [hidden] {
   display: none !important;
+}
+.danger{
+  color: red;
 }

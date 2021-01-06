@@ -122,18 +122,17 @@
         }, 5000);
 
         function getIds() {
-            return [...elements('.results .item')]
-                .map(item => item.getAttribute('data-id'));
+            return jq('.results .item').map(item => item.attr('data-id'));
         }
 
         function updateSigns(signs) {
-            elements('.results .item')
+            jq('.results .item')
                 .forEach(item => {
-                    const id = Number(item.getAttribute('data-id'));
+                    const id = Number(item.attr('data-id'));
                     const signInfo = signs.find(sign => sign.id === id);
                     if (signInfo) {
-                        item.querySelector('.sign-count').innerHTML = signInfo.signs_count;
-                        item.querySelector('.bar').style.width = signInfo.signs_percent + "%";
+                        item.select('.sign-count').html(signInfo.signs_count);
+                        item.select('.bar').css('width', signInfo.signs_percent + "%");
                     }
                 });
         }

@@ -5,6 +5,9 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    @yield('meta')
+
     <title>@yield('title')</title>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="{{ url('css/style.css') }}">
@@ -28,12 +31,12 @@
     <div class="links">
         <div class="toggle-form"><span class="material-icons">search</span></div>
         @guest
-            <a href="{{route('login')}}">Logowanie</a>
-            <a href="{{route('register')}}">Rejestracja</a>
+            <a href="{{route('login')}}">@lang('common.login')</a>
+            <a href="{{route('register')}}">@lang('common.register')</a>
         @endguest
         @auth
-            <a href="{{route('create-petition')}}">Dodaj petycję</a>
-            <a href="{{route('logout')}}">Wyloguj</a>
+            <a href="{{route('create-petition')}}">@lang('petition.create')</a>
+            <a href="{{route('logout')}}">@lang('common.logout')</a>
         @endauth
     </div>
 </header>
@@ -44,9 +47,14 @@
 
 <footer>
     <div class="footer-links">
-        <a href="{{route('login')}}">Zaloguj się</a>
-        <a href="{{route('register')}}">Zarejestruj się</a>
-        <a href="{{route('petitions')}}">Petycje</a>
+        @guest
+            <a href="{{route('login')}}">@lang('common.sign_in')</a>
+            <a href="{{route('register')}}">@lang('common.sign_up')</a>
+        @endguest
+        @auth
+            <a href="{{route('create-petition')}}">@lang('petition.create')</a>
+        @endauth
+        <a href="{{route('petitions')}}">@lang('petition.petitions')</a>
     </div>
 </footer>
 

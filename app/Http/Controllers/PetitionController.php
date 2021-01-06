@@ -3,8 +3,10 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\PetitionRequest;
 use App\Models\Petition;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class PetitionController extends Controller
 {
@@ -21,10 +23,7 @@ class PetitionController extends Controller
             });
         }
         $data = $data->where('is_public', true)
-            ->select(['id', 'name', 'goal', 'user_id'])
-            ->with(['user' => function ($user) {
-                $user->select(['id', 'first_name', 'last_name']);
-            }])
+            ->select(['id', 'name', 'goal'])
             ->withCount('signs')
             ->orderBy('id', 'desc')
             ->paginate(20, ['petitions.*'], 'page', $page)
@@ -36,15 +35,35 @@ class PetitionController extends Controller
         ]);
     }
 
-    public function show(Request $request, Petition $petition)
+    public function show(int $id)
     {
+        $petition = Petition::where([
+            ['id', $id],
+            ['is_public', true]
+        ])->with(['user' => function ($user) {
+            $user->select(['id','first_name', 'last_name']);
+        }])->first();
+//        dd($petition->toArray());
         return view('pages.single-petition', [
-            'data' => $petition
+            'petition' => $petition
         ]);
     }
 
-    public function create(Request $request)
+    public function create(PetitionRequest $request)
     {
+        $petition = new Petition([
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'type' => (int)$request->get('type'),
+            'goal' => (int)$request->get('goal')
+        ]);
 
+        $petition->is_public = (bool)(int)$request->get('is_public');
+        $petition->user_id = Auth::id();
+        $petition->save();
+        if ($petition->is_public) {
+            return redirect()->route('single-petition', ['id' => $petition->id]);
+        }
+        return redirect()->route('my-petition', ['id' => $petition->id]);
     }
 }
