@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\PetitionRequest;
+use App\Http\Requests\SignRequest;
 use App\Models\Petition;
+use App\Models\Sign;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -41,15 +44,15 @@ class PetitionController extends Controller
             ['id', $id],
             ['is_public', true]
         ])->with(['user' => function ($user) {
-            $user->select(['id','first_name', 'last_name']);
-        }])->first();
-//        dd($petition->toArray());
+            $user->select(['id', 'first_name', 'last_name']);
+        }])->withCount('signs')->first();
+
         return view('pages.single-petition', [
             'petition' => $petition
         ]);
     }
 
-    public function create(PetitionRequest $request)
+    public function create(PetitionRequest $request): RedirectResponse
     {
         $petition = new Petition([
             'name' => $request->get('name'),

@@ -42,6 +42,7 @@
 </header>
 
 <div class="content">
+    @include('vendor.flash.message')
     @yield('content')
 </div>
 

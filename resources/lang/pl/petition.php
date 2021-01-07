@@ -10,4 +10,6 @@ return [
     'created_by' => 'Utworzona przez',
     'create' => 'Utwórz petycję',
     'petitions' => 'Petycje',
+    'goal' => 'Cel',
+    'signs' => 'Podpisów',
 ];

@@ -13,6 +13,8 @@
                 <div class="created-by">@lang('petition.created_by') {{ $petition->user->full_name }}</div>
             </div>
             <div class="petition-description">{!! $petition->description !!}</div>
+            <div class="petition-description">{!! $petition->description !!}</div>
+            <div class="petition-description">{!! $petition->description !!}</div>
             <div class="petition-tags">
                 @foreach($petition->tags as $tag)
                     <div class="tag">
@@ -23,7 +25,33 @@
         </div>
         <aside class="sign-section-wrapper">
             <div class="sign-section">
-                podpisz
+                <div class="sign-box">
+
+                    @include('layout.sign-count', ['petition' => $petition, 'checkSigns' => true])
+
+                    <form action="{{route('sign-petition', ['id' => $petition->id])}}" method="post">
+                        @csrf
+                        <div class="inputs">
+                            <label>
+                                <span class="label">Imię</span>
+                                <input type="text" name="first_name" required placeholder="Imię">
+                            </label>
+                            <label>
+                                <span class="label">Nazwisko</span>
+                                <input type="text" name="last_name" required placeholder="Nazwisko">
+                            </label>
+                            <label>
+                                <span class="label">Email</span>
+                                <input type="email" name="email" required placeholder="Email">
+                            </label>
+                        </div>
+                        <label class="inline checkbox">
+                            <input type="checkbox" name="notify" value="1">
+                            <span class="label">Informuj mnie o ważnych zdarzeniach związanych z petycją</span>
+                        </label>
+                        <button type="submit">Podpisz</button>
+                    </form>
+                </div>
             </div>
         </aside>
     </div>
