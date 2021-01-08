@@ -20,7 +20,6 @@ class HomeController extends Controller
             ->limit(20)
             ->get();
 
-        flash()->success(' Successfully updated device ')->overlay();
         return view('pages.home', [
             'lastPetitions' => $lastPetitions,
         ]);

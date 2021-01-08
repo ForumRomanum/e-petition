@@ -43,6 +43,7 @@
 
 <div class="content">
     @include('vendor.flash.message')
+    @include('layout.errors')
     @yield('content')
 </div>
 

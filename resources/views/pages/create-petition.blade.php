@@ -5,7 +5,6 @@
 @section('content')
     <h1>Stwórz petycję</h1>
     <form method="post">
-        @include('layout.errors')
         @csrf
         <div class="petition-type">
             <label class="radio">

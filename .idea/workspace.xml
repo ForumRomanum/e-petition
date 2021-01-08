@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs" />
+    <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +210,8 @@
       <workItem from="1609757909310" duration="619000" />
       <workItem from="1609781897361" duration="13095000" />
       <workItem from="1609864969240" duration="36049000" />
-      <workItem from="1610042849143" duration="826000" />
+      <workItem from="1610042849143" duration="1025000" />
+      <workItem from="1610092755430" duration="110000" />
     </task>
     <task id="LOCAL-00001" summary="package json">
       <created>1609616104483</created>
@@ -291,7 +297,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610045937876</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="workspace.xml">
+      <created>1610046148277</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610046148277</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -322,6 +335,7 @@
     <MESSAGE value="laravel errors pages" />
     <MESSAGE value="laracasts/flash" />
     <MESSAGE value="sign petition" />
-    <option name="LAST_COMMIT_MESSAGE" value="sign petition" />
+    <MESSAGE value="workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
   </component>
 </project>
