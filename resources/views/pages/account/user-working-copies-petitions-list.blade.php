@@ -2,12 +2,10 @@
     @foreach($petitions as $petition)
         <div class="item" data-id="{{$petition->id}}">
             <div class="title">
-                <a href="{{route('single-petition', ['id' => $petition->id])}}">
+                <a href="{{route('edit-petition', ['id' => $petition->id])}}">
                     {{$petition->name}}
                 </a>
             </div>
-            @include('layout.sign-count', ['petition' => $petition])
-            <a href=""></a>
         </div>
     @endforeach
 

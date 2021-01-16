@@ -46,12 +46,23 @@ Route::middleware('auth')->group(function () {
 
         Route::get('/', [UserController::class, 'myAccount'])
             ->name('my-account');
+
         Route::get('/petitions', [UserController::class, 'myPetitions'])
             ->name('my-petitions');
+
+        Route::get('/petitions/{id}/signs', [UserController::class, 'myPetitionSigns'])
+            ->where('id', '[0-9]+')
+            ->name('my-petition-signs');
+
         Route::get('/petitions/working-copies', [UserController::class, 'myWorkingCopies'])
             ->name('my-working-copies');
 
+        Route::get('/petitions/working-copies/{id}', [UserController::class, 'editPetition'])
+            ->where('id', '[0-9]+')
+            ->name('edit-petition');
+
     });
+
     Route::get('/logout', [AuthController::class, 'logout'])
         ->name('logout');
 });

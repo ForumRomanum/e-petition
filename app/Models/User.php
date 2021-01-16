@@ -19,6 +19,7 @@ use Illuminate\Support\Str;
  * @property integer role_id
  * @property string first_name
  * @property string last_name
+ * @property string full_name
  * @property string email
  * @property string password_reset_token
  * @property string remember_token
