@@ -2,10 +2,13 @@
 
 namespace App\Models;
 
+use App\Events\SignCreated;
 use DateTime;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 /**
  * @property integer id
@@ -39,8 +42,22 @@ class Sign extends Model
         'confirmed_at' => 'datetime',
     ];
 
+    protected $dispatchesEvents = [
+        'created' => SignCreated::class
+    ];
+
     public function petition(): BelongsTo
     {
         return $this->belongsTo(Petition::class);
+    }
+
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(function ($model) {
+            $generateRandomString = Str::random(60);
+            $token = Hash::make($generateRandomString);
+            $model->confirm_token = $token;
+        });
     }
 }

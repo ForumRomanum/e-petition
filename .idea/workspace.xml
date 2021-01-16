@@ -5,37 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs">
-      <change afterPath="$PROJECT_DIR$/database/migrations/2021_01_06_141414_extend_descriptions_fields_in_petitions_table.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/create-petition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/single-petition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/js/single-petition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/common.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/en/petition.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/pl/auth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/pl/common.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/pl/pagination.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/pl/passwords.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/pl/petition.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/lang/pl/validation.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layout/errors.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/single-petition.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Requests/PetitionRequest.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Requests/PetitionRequest.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Petition.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Petition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/PetitionFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/PetitionFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/factories/SignFactory.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/factories/SignFactory.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2021_01_03_200612_create_petitions_tags_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2021_01_03_200612_create_petitions_tags_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/forms.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/forms.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/header.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/header.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/create-petition.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/create-petition.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/petitions-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/petitions-list.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -52,7 +24,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="feature/create-petition" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -168,6 +140,10 @@
       <path value="$PROJECT_DIR$/vendor/symfony/debug" />
       <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-debugbar" />
       <path value="$PROJECT_DIR$/vendor/maximebf/debugbar" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/dbal" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
+      <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
+      <path value="$PROJECT_DIR$/vendor/laracasts/flash" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mWiXfJfsepELCteqS5t0VHXyuI" />
@@ -176,7 +152,6 @@
   </component>
   <component name="ProjectViewState">
     <option name="autoscrollFromSource" value="true" />
-    <option name="compactDirectories" value="true" />
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
@@ -185,18 +160,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/css" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dawid\projects\e-petycje\public\css" />
-      <recent name="C:\Users\dawid\projects\e-petycje\public\js" />
-      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages" />
-      <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\pl" />
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\en" />
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\pl" />
+      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Controllers" />
+      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Requests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
@@ -234,7 +209,9 @@
       <workItem from="1609615796935" duration="34323000" />
       <workItem from="1609757909310" duration="619000" />
       <workItem from="1609781897361" duration="13095000" />
-      <workItem from="1609864969240" duration="17544000" />
+      <workItem from="1609864969240" duration="36049000" />
+      <workItem from="1610042849143" duration="1025000" />
+      <workItem from="1610092755430" duration="110000" />
     </task>
     <task id="LOCAL-00001" summary="package json">
       <created>1609616104483</created>
@@ -285,7 +262,49 @@
       <option name="project" value="LOCAL" />
       <updated>1609705571056</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Create petition">
+      <created>1609944244864</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1609944244864</updated>
+    </task>
+    <task id="LOCAL-00009" summary="laravel errors pages">
+      <created>1610042885077</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1610042885077</updated>
+    </task>
+    <task id="LOCAL-00010" summary="laracasts/flash">
+      <created>1610045817719</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1610045817719</updated>
+    </task>
+    <task id="LOCAL-00011" summary="laracasts/flash">
+      <created>1610045898758</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1610045898758</updated>
+    </task>
+    <task id="LOCAL-00012" summary="sign petition">
+      <created>1610045937876</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1610045937876</updated>
+    </task>
+    <task id="LOCAL-00013" summary="workspace.xml">
+      <created>1610046148277</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1610046148277</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -312,6 +331,11 @@
     <MESSAGE value="db update" />
     <MESSAGE value="ckeditor" />
     <MESSAGE value="search, petition list, pagination, live update signs" />
-    <option name="LAST_COMMIT_MESSAGE" value="search, petition list, pagination, live update signs" />
+    <MESSAGE value="Create petition" />
+    <MESSAGE value="laravel errors pages" />
+    <MESSAGE value="laracasts/flash" />
+    <MESSAGE value="sign petition" />
+    <MESSAGE value="workspace.xml" />
+    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
   </component>
 </project>

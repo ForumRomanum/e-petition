@@ -10,4 +10,6 @@ return [
     'created_by' => 'Created by',
     'create' => 'Create petition',
     'petitions' => 'Petitions',
+    'goal' => 'Goal',
+    'signs' => 'Signs',
 ];

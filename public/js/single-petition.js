@@ -14,3 +14,4 @@ function checkOffset() {
 
 window.addEventListener('scroll', checkOffset);
 window.addEventListener('resize', checkOffset);
+checkOffset();
