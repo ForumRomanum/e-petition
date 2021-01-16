@@ -7,6 +7,7 @@
                 </a>
             </div>
             @include('layout.sign-count', ['petition' => $petition])
+            <a href=""></a>
         </div>
     @endforeach
 

@@ -35,6 +35,7 @@
             <a href="{{route('register')}}">@lang('common.register')</a>
         @endguest
         @auth
+            <a href="{{route('my-account')}}">@lang('account.title')</a>
             <a href="{{route('create-petition')}}">@lang('petition.create')</a>
             <a href="{{route('logout')}}">@lang('common.logout')</a>
         @endauth

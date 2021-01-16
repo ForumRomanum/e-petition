@@ -4,9 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\PetitionRequest;
-use App\Http\Requests\SignRequest;
 use App\Models\Petition;
-use App\Models\Sign;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;

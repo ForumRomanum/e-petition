@@ -4,6 +4,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\PetitionController;
 use App\Http\Controllers\SignController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -40,6 +41,17 @@ Route::middleware('auth')->group(function () {
 
     Route::post('/petitions/create', [PetitionController::class, 'create']);
 
+
+    Route::prefix('/my-account')->group(function () {
+
+        Route::get('/', [UserController::class, 'myAccount'])
+            ->name('my-account');
+        Route::get('/petitions', [UserController::class, 'myPetitions'])
+            ->name('my-petitions');
+        Route::get('/petitions/working-copies', [UserController::class, 'myWorkingCopies'])
+            ->name('my-working-copies');
+
+    });
     Route::get('/logout', [AuthController::class, 'logout'])
         ->name('logout');
 });

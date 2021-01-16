@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs">
+      <change afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/pl/account.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layout/user-petitions-list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/account.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/my-petitions.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/sidebar.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/layout/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/create-petition.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layout/petitions-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layout/petitions-list.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/create-petition" />
+        <entry key="$PROJECT_DIR$" value="feature/sign-petition" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -160,20 +168,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../pixel-cms" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages\account" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
-      <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\en" />
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\pl" />
       <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Controllers" />
-      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Requests" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages\account" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
     </key>
   </component>
@@ -211,7 +220,14 @@
       <workItem from="1609781897361" duration="13095000" />
       <workItem from="1609864969240" duration="36049000" />
       <workItem from="1610042849143" duration="1025000" />
-      <workItem from="1610092755430" duration="110000" />
+      <workItem from="1610092755430" duration="1526000" />
+      <workItem from="1610123109138" duration="1762000" />
+      <workItem from="1610126716375" duration="14000" />
+      <workItem from="1610129568022" duration="2193000" />
+      <workItem from="1610203800300" duration="608000" />
+      <workItem from="1610355558462" duration="1225000" />
+      <workItem from="1610481432945" duration="1241000" />
+      <workItem from="1610789515427" duration="4435000" />
     </task>
     <task id="LOCAL-00001" summary="package json">
       <created>1609616104483</created>
@@ -304,7 +320,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610046148277</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="fix errors">
+      <created>1610092898563</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1610092898563</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -336,6 +359,7 @@
     <MESSAGE value="laracasts/flash" />
     <MESSAGE value="sign petition" />
     <MESSAGE value="workspace.xml" />
-    <option name="LAST_COMMIT_MESSAGE" value="workspace.xml" />
+    <MESSAGE value="fix errors" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix errors" />
   </component>
 </project>
