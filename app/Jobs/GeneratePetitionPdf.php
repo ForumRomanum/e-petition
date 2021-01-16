@@ -20,9 +20,9 @@ class GeneratePetitionPdf implements ShouldQueue
     /**
      * Create a new job instance.
      *
-     * @param Petition $petition
+     * @param array $petition
      */
-    public function __construct(Petition $petition)
+    public function __construct(array $petition)
     {
         $this->petition = $petition;
     }
@@ -37,7 +37,7 @@ class GeneratePetitionPdf implements ShouldQueue
         $pdf = PDF::loadView('pdf.petition', [
             'petition' => $this->petition,
         ]);
-        $pdfPath = $this->petition->id . '-' . $this->petition->name . '.pdf';
+        $pdfPath = $this->petition['id'] . '-' . $this->petition['name'] . '.pdf';
         $pdf->save(storage_path('app/public/' . $pdfPath));
 
         event(new PetitionPdfGenerated($this->petition, 'storage/' . $pdfPath));

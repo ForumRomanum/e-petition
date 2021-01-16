@@ -6,11 +6,13 @@ namespace App\Http\Controllers\Api;
 use App\Http\Controllers\Controller;
 use App\Jobs\GeneratePetitionPdf;
 use App\Models\Petition;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class ApiPetitionController extends Controller
 {
-    public function getSignsInfo(Request $request)
+    public function getSignsInfo(Request $request): Response
     {
         $ids = explode(',', $request->get('ids', ''));
         if (!count($ids)) {
@@ -32,15 +34,15 @@ class ApiPetitionController extends Controller
         return response($data);
     }
 
-    public function generatePetitionPdf(int $id)
+    public function generatePetitionPdf(int $id): RedirectResponse
     {
         $petition = Petition::where('id', $id)
             ->withCount('signs')
             ->with(['signs', 'user'])
-            ->first();
+            ->first()->toArray();
 
-        GeneratePetitionPdf::dispatch($petition)->onQueue('pdf');
+        GeneratePetitionPdf::dispatch($petition);
 
-        return response(null);
+        return redirect()->back();
     }
 }

@@ -29,14 +29,14 @@ class SendPetitionPdfToUser
         $path = $event->getPath();
 
         $signs = 'name,email' . PHP_EOL;
-        foreach ($petition->signs as $sign) {
-            $line = $sign->full_name . ',' . $sign->email . PHP_EOL;
+        foreach ($petition['signs'] as $sign) {
+            $line = $sign['full_name'] . ',' . $sign['email'] . PHP_EOL;
             $signs .= $line;
         }
         Mail::send('mail.petition-pdf', [
-            'name' => trim($petition->name),
+            'name' => trim($petition['name']),
         ], function ($message) use ($petition, $path, $signs) {
-            $message->to($petition->user->email)
+            $message->to($petition['user']['email'])
                 ->subject(__('account.petition-pdf'));
             $message->attach($path);
             $message->attachData($signs, 'signs.csv', []);

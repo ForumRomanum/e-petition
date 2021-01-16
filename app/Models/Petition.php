@@ -21,6 +21,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string description
  * @property-read string description_plain
  * @property bool is_public
+ * @property integer signs_count
  * @property Sign[] signs
  * @property Tag[] tags
  * @property User user
@@ -54,6 +55,7 @@ class Petition extends Model
         'description_short',
         'signs_percent',
         'formatted_signs_count',
+        'formatted_goal',
     ];
 
     public function user(): BelongsTo
@@ -63,7 +65,9 @@ class Petition extends Model
 
     public function signs(): HasMany
     {
-        return $this->hasMany(Sign::class)->whereNotNull('confirmed_at');
+        return $this->hasMany(Sign::class)
+            ->whereNotNull('confirmed_at')
+            ->orderBy('id', 'desc');
     }
 
     public function tags(): BelongsToMany

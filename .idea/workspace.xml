@@ -5,29 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs">
-      <change afterPath="$PROJECT_DIR$/app/Events/PetitionPdfGenerated.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Jobs/GeneratePetitionPdf.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Listeners/SendPetitionPdfToUser.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config/dompdf.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/mail/petition-pdf.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pdf/petition.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/e-petycje.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/e-petycje.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Events/PetitionPdfGenerated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/PetitionPdfGenerated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiPetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiPetitionController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/GeneratePetitionPdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/GeneratePetitionPdf.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Listeners/SendPetitionPdfToUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendPetitionPdfToUser.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Models/Petition.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Petition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/lang/pl/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/account/user-petition-signs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/account/user-petition-signs.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/single-petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/single-petition.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pdf/petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/petition.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -351,7 +335,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610794443091</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="send sign">
+      <created>1610803114913</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1610803114913</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -385,6 +376,7 @@
     <MESSAGE value="workspace.xml" />
     <MESSAGE value="fix errors" />
     <MESSAGE value="user petitions list" />
-    <option name="LAST_COMMIT_MESSAGE" value="user petitions list" />
+    <MESSAGE value="send sign" />
+    <option name="LAST_COMMIT_MESSAGE" value="send sign" />
   </component>
 </project>

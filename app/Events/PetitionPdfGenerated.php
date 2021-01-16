@@ -17,16 +17,16 @@ class PetitionPdfGenerated
     /**
      * Create a new event instance.
      *
-     * @param Petition $petition
+     * @param array $petition
      * @param string $pdfPath
      */
-    public function __construct(Petition $petition, string $pdfPath)
+    public function __construct(array $petition, string $pdfPath)
     {
         $this->petition = $petition;
         $this->pdfPath = $pdfPath;
     }
 
-    public function getPetition(): Petition
+    public function getPetition(): array
     {
         return $this->petition;
     }
