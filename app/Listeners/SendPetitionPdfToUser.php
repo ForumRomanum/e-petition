@@ -42,5 +42,7 @@ class SendPetitionPdfToUser
             $message->attachData($signs, 'signs.csv', []);
             $message->from(env('MAIL_USERNAME'), env('APP_NAME'));
         });
+
+        unlink($path);
     }
 }

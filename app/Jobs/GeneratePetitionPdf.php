@@ -3,7 +3,6 @@
 namespace App\Jobs;
 
 use App\Events\PetitionPdfGenerated;
-use App\Models\Petition;
 use Barryvdh\DomPDF\Facade as PDF;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldQueue;

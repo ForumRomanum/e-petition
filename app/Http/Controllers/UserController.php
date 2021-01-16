@@ -3,15 +3,23 @@
 namespace App\Http\Controllers;
 
 
+use App\Http\Requests\AccountRequest;
 use App\Models\Petition;
+use App\Models\User;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-    public function myAccount(Request $request)
+    public function saveMyAccount(AccountRequest $request): RedirectResponse
     {
-        return view('pages.account.account', []);
+        $user = User::find(Auth::id());
+
+        $user->fill($request->all());
+        $user->save();
+
+        return redirect()->back();
     }
 
     public function myPetitions(Request $request)

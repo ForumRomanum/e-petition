@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Http\Requests\PetitionRequest;
+use App\Jobs\GeneratePetitionPdf;
 use App\Models\Petition;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
@@ -66,5 +67,17 @@ class PetitionController extends Controller
             return redirect()->route('single-petition', ['id' => $petition->id]);
         }
         return redirect()->route('my-petition', ['id' => $petition->id]);
+    }
+
+    public function generatePetitionPdf(int $id): RedirectResponse
+    {
+        $petition = Petition::where('id', $id)
+            ->withCount('signs')
+            ->with(['signs', 'user'])
+            ->first()->toArray();
+
+        GeneratePetitionPdf::dispatch($petition);
+        flash()->success(__('account.petition-pdf-sent'));
+        return redirect()->route('my-petition-signs', ['id' => $id]);
     }
 }

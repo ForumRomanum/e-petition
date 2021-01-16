@@ -5,13 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs">
+      <change afterPath="$PROJECT_DIR$/app/Http/Requests/AccountRequest.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/css/flash-alert.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/lang/en/account.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Events/PetitionPdfGenerated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Events/PetitionPdfGenerated.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiPetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiPetitionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/PetitionController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/SignController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Jobs/GeneratePetitionPdf.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/GeneratePetitionPdf.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Listeners/SendPetitionPdfToUser.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Listeners/SendPetitionPdfToUser.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Petition.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Petition.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pdf/petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pdf/petition.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/single-petition.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/single-petition.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/lang/pl/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/account.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/account/account.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/account/account.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/vendor/flash/message.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/vendor/flash/message.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -168,18 +178,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mail" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/Http/Requests" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Requests" />
+      <recent name="C:\Users\dawid\projects\e-petycje\public\css" />
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\en" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\mail" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages\account" />
-      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
-      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages" />
-      <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\pl" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages\account" />
@@ -342,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1610803114913</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="petition pdf">
+      <created>1610806684257</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1610806684257</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,6 +394,7 @@
     <MESSAGE value="fix errors" />
     <MESSAGE value="user petitions list" />
     <MESSAGE value="send sign" />
-    <option name="LAST_COMMIT_MESSAGE" value="send sign" />
+    <MESSAGE value="petition pdf" />
+    <option name="LAST_COMMIT_MESSAGE" value="petition pdf" />
   </component>
 </project>

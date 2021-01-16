@@ -2,6 +2,7 @@
 @import "header.css";
 @import "footer.css";
 @import "forms.css";
+@import "flash-alert.css";
 
 * {
   box-sizing: border-box;

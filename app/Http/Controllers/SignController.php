@@ -43,7 +43,7 @@ class SignController extends Controller
         $sign->confirm_token = null;
         $sign->confirmed_at = now();
         $sign->save();
-        flash()->success(' Successfully updated device ');
+
         return redirect()->route('single-petition', ['id' => $sign->petition_id]);
     }
 }

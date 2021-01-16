@@ -20,6 +20,3 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/signs-info', [ApiPetitionController::class, 'getSignsInfo'])
     ->name('api-signs-info');
-
-Route::get('/petitions/{id}/get-pdf', [ApiPetitionController::class, 'generatePetitionPdf'])
-    ->name('get-petition-in-pdf');

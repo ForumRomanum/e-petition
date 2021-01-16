@@ -44,8 +44,11 @@ Route::middleware('auth')->group(function () {
 
     Route::prefix('/my-account')->group(function () {
 
-        Route::get('/', [UserController::class, 'myAccount'])
-            ->name('my-account');
+        Route::get('/', function () {
+            return view('pages.account.account');
+        })->name('my-account');
+
+        Route::post('/', [UserController::class, 'saveMyAccount']);
 
         Route::get('/petitions', [UserController::class, 'myPetitions'])
             ->name('my-petitions');
@@ -53,6 +56,9 @@ Route::middleware('auth')->group(function () {
         Route::get('/petitions/{id}/signs', [UserController::class, 'myPetitionSigns'])
             ->where('id', '[0-9]+')
             ->name('my-petition-signs');
+
+        Route::get('/petitions/{id}/get-pdf', [PetitionController::class, 'generatePetitionPdf'])
+            ->name('get-petition-in-pdf');
 
         Route::get('/petitions/working-copies', [UserController::class, 'myWorkingCopies'])
             ->name('my-working-copies');

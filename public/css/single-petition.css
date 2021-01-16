@@ -1,6 +1,7 @@
 .wrapper {
   display: flex;
   flex-direction: row;
+  min-height: 400px;
 }
 
 .petition {
@@ -61,7 +62,8 @@
   padding: 10px 10px 10px 20px;
   height: inherit;
 }
-.sign-box form{
+
+.sign-box form {
   width: 100%;
   height: 100%;
   display: flex;
@@ -69,7 +71,7 @@
   flex-direction: column;
 }
 
-.sign-box label.checkbox .label{
+.sign-box label.checkbox .label {
   font-size: 13px;
 }
 
@@ -110,7 +112,7 @@
     justify-content: space-between;
   }
 
-  .sign-box .inputs label{
+  .sign-box .inputs label {
     width: 30%;
   }
 }
