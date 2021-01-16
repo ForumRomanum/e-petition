@@ -13,6 +13,8 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property integer id
  * @property integer user_id
  * @property integer goal
+ * @property string formatted_goal
+ * @property string formatted_signs_count
  * @property integer type
  * @property string name
  * @property string description
@@ -26,16 +28,22 @@ class Petition extends Model
     const PETITION_TO_MINISTRY = 0;
     const PETITION_TO_PUBLIC_PERSON = 1;
 
+    const TYPES_NAMES = [
+        self::PETITION_TO_MINISTRY => 'petition.to_ministry',
+        self::PETITION_TO_PUBLIC_PERSON => 'petition.to_public_person',
+    ];
+
     protected $fillable = [
         'name',
         'description',
-        'is_public',
+        'type',
+        'goal',
     ];
 
     protected $guarded = [
+        'is_public',
         'user_id',
         'description_plain',
-        'goal',
     ];
 
     protected $appends = [
@@ -50,12 +58,17 @@ class Petition extends Model
 
     public function signs(): HasMany
     {
-        return $this->hasMany(Sign::class);
+        return $this->hasMany(Sign::class)->whereNotNull('confirmed_at');
     }
 
     public function tags()
     {
         return $this->belongsToMany(Tag::class);
+    }
+
+    public function tagNames()
+    {
+        return $this->belongsToMany(Tag::class)->select(['name']);
     }
 
     public function setDescriptionAttribute(string $value)
@@ -73,6 +86,15 @@ class Petition extends Model
             ) . '...';
     }
 
+    public function getFormattedGoalAttribute(): string
+    {
+        return number_format($this->goal, 0, ',', ' ');
+    }
+
+    public function getFormattedSignsCountAttribute(): string
+    {
+        return number_format($this->signs_count, 0, ',', ' ');
+    }
 
     public function getSignsPercentAttribute(): string
     {

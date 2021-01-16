@@ -28,6 +28,7 @@ class PetitionFactory extends Factory
             'user_id' => User::notAdmin()->inRandomOrder()->first()->id,
             'goal' => rand(1000, 100000),
             'is_public' => true,
+            'type' => Petition::PETITION_TO_MINISTRY
         ];
     }
 }

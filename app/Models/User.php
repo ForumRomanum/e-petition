@@ -46,6 +46,9 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $appends = [
+        'full_name'
+    ];
 
     protected $guarded = [
         'password_reset_token',
@@ -62,6 +65,11 @@ class User extends Authenticatable
     public function getIsAdminAttribute(): bool
     {
         return $this->role_id === Role::getAdminRole()->id;
+    }
+
+    public function getFullNameAttribute(): string
+    {
+        return trim($this->first_name . ' ' . $this->last_name);
     }
 
     public static function notAdmin(): Builder

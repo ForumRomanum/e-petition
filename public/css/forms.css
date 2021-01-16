@@ -3,11 +3,109 @@ label {
   flex-direction: column;
 }
 
-label span {
-  height: 30px;
+label.inline {
+  flex-direction: row;
 }
 
 label input {
   height: 30px;
   margin: 5px 0;
+  padding: 5px;
+}
+
+label .label {
+  display: flex;
+  align-items: center;
+  min-height: 30px;
+  user-select: none;
+}
+
+label.radio,
+label.checkbox {
+  flex-direction: row;
+  align-items: center;
+}
+
+label.checkbox input[type="checkbox"] {
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+label.checkbox .label {
+  width: calc(100% - 30px);
+}
+
+label.radio input[type="radio"] {
+  position: relative;
+  width: 20px;
+  height: 20px;
+}
+
+label.radio .label {
+  width: calc(100% - 20px);
+}
+
+label.checkbox input[type="checkbox"]:after,
+label.checkbox input[type="checkbox"]:before,
+label.radio input[type="radio"]:after,
+label.radio input[type="radio"]:before {
+  content: ' ';
+  background: #fff;
+  position: absolute;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+label.checkbox input[type="checkbox"]:before,
+label.radio input[type="radio"]:before {
+  z-index: 1;
+  width: 0;
+  height: 0;
+  transition: all 0.2s ease-in;
+  left: 50%;
+  top: 50%;
+}
+
+label.checkbox input[type="checkbox"]:after {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #ccc;
+}
+
+label.checkbox input[type="checkbox"]:before {
+  transform: translate(-50%, -50%) rotate(45deg);
+  border: 0 solid #09c;
+  border-top: none;
+  border-left: none;
+}
+
+label.checkbox input[type="checkbox"]:checked:before {
+  width: 10px;
+  height: 20px;
+  border-width: 3px;
+}
+
+label.radio input[type="radio"]:after {
+  width: 20px;
+  height: 20px;
+  border-radius: 20px;
+  border: 1px solid #09c;
+}
+
+label.radio input[type="radio"]:before {
+  border-radius: 20px;
+  transform: translate(-50%, -50%);
+  background: #0099cc;
+}
+
+label.radio input[type="radio"]:checked:before {
+  width: 10px;
+  height: 10px;
+}
+
+label.radio input[type="radio"] + .label,
+label.checkbox input[type="checkbox"] + .label {
+  padding: 5px;
+  cursor: pointer;
 }
