@@ -47,7 +47,7 @@ class UserController extends Controller
             ->withQueryString();
     }
 
-    public function myPetitionSigns(Request $request, int $id)
+    public function myPetitionSigns(int $id)
     {
         $petition = Petition::where('id', $id)
             ->select(['id', 'name', 'goal'])

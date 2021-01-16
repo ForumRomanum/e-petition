@@ -10,11 +10,14 @@
 
         <div class="account">
             <div>
-            <h2>{{ $petition->name }}</h2>
+                <h2>{{ $petition->name }}</h2>
             </div>
             <div>
                 {{$petition->formatted_signs_count}} @lang('petition.signs')
             </div>
+            <a href="{{ route('get-petition-in-pdf', ['id' => $petition->id]) }}">
+                PDF
+            </a>
             <div class="results">
                 @foreach($petition->signs as $sign)
                     <div class="item">

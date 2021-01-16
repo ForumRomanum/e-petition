@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Api;
 
 
 use App\Http\Controllers\Controller;
+use App\Jobs\GeneratePetitionPdf;
 use App\Models\Petition;
 use Illuminate\Http\Request;
 
@@ -31,4 +32,15 @@ class ApiPetitionController extends Controller
         return response($data);
     }
 
+    public function generatePetitionPdf(int $id)
+    {
+        $petition = Petition::where('id', $id)
+            ->withCount('signs')
+            ->with(['signs', 'user'])
+            ->first();
+
+        GeneratePetitionPdf::dispatch($petition)->onQueue('pdf');
+
+        return response(null);
+    }
 }

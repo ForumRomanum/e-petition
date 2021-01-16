@@ -5,16 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e07d9f65-46be-4684-b654-ced76e8167fe" name="Default Changelist" comment="search, petition list, pagination, live update signs">
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/edit-petition.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/user-petition-signs.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/pages/account/user-working-copies-petitions-list.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Events/PetitionPdfGenerated.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Jobs/GeneratePetitionPdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Listeners/SendPetitionPdfToUser.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config/dompdf.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/mail/petition-pdf.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/pdf/petition.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/e-petycje.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/e-petycje.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiPetitionController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/ApiPetitionController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/UserController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/Sign.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Sign.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Models/Petition.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Models/Petition.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/packages.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/packages.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bootstrap/cache/services.php" beforeDir="false" afterPath="$PROJECT_DIR$/bootstrap/cache/services.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/app.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/lang/pl/account.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/lang/pl/account.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layout/user-petitions-list.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/account/user-petitions-list.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/pages/account/my-petitions.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/account/my-petitions.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/account/user-petition-signs.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/account/user-petition-signs.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/pages/single-petition.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/pages/single-petition.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +43,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="feature/sign-petition" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -151,6 +163,11 @@
       <path value="$PROJECT_DIR$/vendor/doctrine/event-manager" />
       <path value="$PROJECT_DIR$/vendor/doctrine/cache" />
       <path value="$PROJECT_DIR$/vendor/laracasts/flash" />
+      <path value="$PROJECT_DIR$/vendor/barryvdh/laravel-dompdf" />
+      <path value="$PROJECT_DIR$/vendor/sabberworm/php-css-parser" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-svg-lib" />
+      <path value="$PROJECT_DIR$/vendor/phenx/php-font-lib" />
+      <path value="$PROJECT_DIR$/vendor/dompdf/dompdf" />
     </include_path>
   </component>
   <component name="ProjectId" id="1mWiXfJfsepELCteqS5t0VHXyuI" />
@@ -167,18 +184,18 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/pages/account" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/mail" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.sourceCode.JavaScript" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dawid\projects\e-petycje\resources\views\mail" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages\account" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\layout" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages" />
       <recent name="C:\Users\dawid\projects\e-petycje\resources\lang\pl" />
-      <recent name="C:\Users\dawid\projects\e-petycje\app\Http\Controllers" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dawid\projects\e-petycje\resources\views\pages\account" />
@@ -202,6 +219,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.serve" />
         <item itemvalue="npm.serve" />
       </list>
     </recent_temporary>

@@ -6,6 +6,7 @@ use App\Helpers\Helpers;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
@@ -20,6 +21,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
  * @property string description
  * @property-read string description_plain
  * @property bool is_public
+ * @property Sign[] signs
+ * @property Tag[] tags
+ * @property User user
  */
 class Petition extends Model
 {
@@ -49,6 +53,7 @@ class Petition extends Model
     protected $appends = [
         'description_short',
         'signs_percent',
+        'formatted_signs_count',
     ];
 
     public function user(): BelongsTo
@@ -61,12 +66,12 @@ class Petition extends Model
         return $this->hasMany(Sign::class)->whereNotNull('confirmed_at');
     }
 
-    public function tags()
+    public function tags(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class);
     }
 
-    public function tagNames()
+    public function tagNames(): BelongsToMany
     {
         return $this->belongsToMany(Tag::class)->select(['name']);
     }

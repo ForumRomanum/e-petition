@@ -2,7 +2,9 @@
 
 namespace App\Providers;
 
+use App\Events\PetitionPdfGenerated;
 use App\Events\SignCreated;
+use App\Listeners\SendPetitionPdfToUser;
 use App\Listeners\SendSignCreatedEmail;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Auth\Listeners\SendEmailVerificationNotification;
@@ -22,6 +24,9 @@ class EventServiceProvider extends ServiceProvider
         SignCreated::class => [
             SendSignCreatedEmail::class
         ],
+        PetitionPdfGenerated::class => [
+            SendPetitionPdfToUser::class
+        ]
     ];
 
     /**

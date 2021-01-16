@@ -13,8 +13,6 @@
                 <div class="created-by">@lang('petition.created_by') {{ $petition->user->full_name }}</div>
             </div>
             <div class="petition-description">{!! $petition->description !!}</div>
-            <div class="petition-description">{!! $petition->description !!}</div>
-            <div class="petition-description">{!! $petition->description !!}</div>
             <div class="petition-tags">
                 @foreach($petition->tags as $tag)
                     <div class="tag">
